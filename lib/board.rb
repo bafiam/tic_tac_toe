@@ -5,7 +5,7 @@ class Game_board
   end
 
   def grid_default
-    Array.new(3){Array.new(3){"|   |"}}
+    Array.new(3){Array.new(3){"|   | "}}
   end
 
   def get_cell(x, y)

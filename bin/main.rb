@@ -5,7 +5,7 @@ Players = Struct.new(:name, :mark)
 
 puts "Welcome to the tic tac toe game\nPlayer 1: provide your name"
 player1 = gets.chomp
-puts "Player 2: provide your name"
+puts "Player 2: provide your name "
 player2 = gets.chomp
 players = [Players.new(player1,"| X | "), Players.new(player2,"| O | ")]
 puts "Welcome, #{players[0].name} and #{players[1].name}\n"

@@ -1,8 +1,10 @@
 #!/usr/bin/ruby
 require_relative '../lib/board.rb'
+require_relative '../lib/game_logic.rb'
 
 Players = Struct.new(:name, :mark)
-
+game_over = 0
+logic = Logic.new
 puts "Welcome to the tic tac toe game\nPlayer 1: provide your name"
 player1 = gets.chomp
 puts "Player 2: provide your name "
@@ -11,19 +13,26 @@ players = [Players.new(player1,"| X | "), Players.new(player2,"| O | ")]
 puts "Welcome, #{players[0].name} and #{players[1].name}\n"
 board = Game_board.new
 const, turn = 1, 0
+x, y = -1, -1
 loop do
   board.display_grid
   puts "\n#{players[turn].name}, Enter a number between 1 and 9 to make your move"
   move = gets.chomp
-  puts "That position has already been taken"
-  puts "That input is not valid. Write a number between 1 and 9"
-  break if move == "-1"
-  x, y = board.convert_input(move)
-  board.modify_cell(x, y, players[turn].mark)
-  turn  += const
-  const *= -1
+  break if move == "-5"
+  unless logic.manage_input(move) == -1
+    x, y = board.convert_input(move)
+    unless logic.pos_empty(board.grid_key[y][x]) == -1
+      board.modify_cell(x, y, players[turn].mark)
+      turn  += const
+      const *= -1
+      game_over = logic.game_end
+      break if game_over != 0 
+    else
+      puts "Position is taken."
+    end
+  else
+    puts "Number must be between 1 and 9 "
+  end
 end
-puts "#{players[turn].name} has won!!!!!!!!!!!!!!!!"
-puts "It's a Tie!!!!!!!!!!!!"
-puts "Do you want to play again? write Y for yes, N for no"
-
+board.display_grid
+puts "It's a TIE!" if game_over == 2

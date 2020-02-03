@@ -21,6 +21,4 @@ class Logic
   	0
   end
 
-
 end
-

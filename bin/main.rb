@@ -23,10 +23,12 @@ loop do
     x, y = board.convert_input(move)
     unless logic.pos_empty(board.grid_key[y][x]) == -1
       board.modify_cell(x, y, players[turn].mark)
+      game_over = logic.check_win(x, y, players[turn].mark, board)
+
+      break if game_over != 0
+     
       turn  += const
       const *= -1
-      game_over = logic.game_end
-      break if game_over != 0 
     else
       puts "Position is taken."
     end
@@ -35,4 +37,4 @@ loop do
   end
 end
 board.display_grid
-puts "It's a TIE!" if game_over == 2
+game_over == 2 ? (puts "It's a TIE!") : (puts "\n#{players[turn].name} is the winner!")

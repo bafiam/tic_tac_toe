@@ -1,14 +1,11 @@
 class Game_board
   attr_accessor :grid_key
-  def initialize(move = {})
-    @grid_key = move.fetch(:grid_key, grid_default)
+
+  def initialize
+     @grid_key = {}.fetch(:grid_key, Array.new(3){Array.new(3){"|   | "}})
   end
 
-  def grid_default
-    Array.new(3){Array.new(3){"|   | "}}
-  end
-
-  def get_cell(x, y)
+  def self.grid_key(x,y)
     @grid_key[y][x]
   end
 

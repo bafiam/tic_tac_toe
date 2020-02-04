@@ -29,7 +29,7 @@ class Logic
   end
 
   def diag(t, board, x)
-     3.times { |k| return 0 if board.grid_key[k][k] != t}
+      3.times { |k| return 0 if board.grid_key[k][k] != t}
      if x == 1
       3.times { |k| return 0 if board.grid_key[k][2 - k] != t} # row
      end

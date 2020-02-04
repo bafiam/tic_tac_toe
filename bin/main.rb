@@ -7,8 +7,14 @@ game_over = 0
 logic = Logic.new
 puts "Welcome to the tic tac toe game\nPlayer 1: provide your name"
 player1 = gets.chomp
+if player1.length == 0
+  player1 = "player 1"
+end
 puts "Player 2: provide your name "
 player2 = gets.chomp
+if player2.length == 0
+  player2 = "player 2"
+end
 players = [Players.new(player1,"| X | "), Players.new(player2,"| O | ")]
 puts "Welcome, #{players[0].name} and #{players[1].name}\n"
 board = Game_board.new
@@ -25,7 +31,21 @@ loop do
       board.modify_cell(x, y, players[turn].mark)
       game_over = logic.game_end(x, y, players[turn].mark, board)
 
-      break if game_over != 0
+      if game_over != 0
+        board.display_grid
+        game_over == 2 ? (puts "It's a TIE!") : (puts "\n#{players[turn].name} is the winner!")
+        puts "Do you want to countinue playing....? Enter 'y' for YES or 'n' for NO"
+        counti = gets.chomp
+        if counti == 'n'
+          break
+        elsif counti == 'y'
+          board = Game_board.new
+          logic = Logic.new
+        else
+          puts "Wrong input, BYE!!!!!!!!!!!!"
+          break
+        end
+      end
      
       turn  += const
       const *= -1
@@ -36,5 +56,4 @@ loop do
     puts "Number must be between 1 and 9 "
   end
 end
-board.display_grid
-game_over == 2 ? (puts "It's a TIE!") : (puts "\n#{players[turn].name} is the winner!")
+

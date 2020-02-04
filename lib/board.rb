@@ -32,3 +32,4 @@ class Game_board
     @grid_key.each {|rows| (rows.each { |x| print x }); puts "" }
   end
 end
+

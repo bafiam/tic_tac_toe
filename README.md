@@ -70,7 +70,7 @@ In addition, create 2 main directories:
     * Improve anything you want to improve in order to mkae your game perfect.
     
     ![Project Screen Shot][product-screenshot]
-
+  
 ### Built With
 This project was built using raw Ruby. 
 
@@ -78,8 +78,19 @@ This project was built using raw Ruby.
 ## Use
 <bold>How should this be manually tested?</bold>
 Clone the repo then navigate to the project directory, on the terminal type bin/main.rb
-Click below to read the game instructions!
-### [Tic-Tac-toe instructions]()
+###### How to play ######
+* After choosing a name, Player 1 (X) will start.
+* Press 1 - 9 to place your move in the 3 x 3 grid that will show on screen.
+  * <br>![Numbered grid][numbers-grid]
+* After game ends, press y or n to continue or exit.
+* You can force a break in the loop by typing -5 as an input.
+
+<i>Tic-Tac-Toe instructions</i> 
+ * Tic-Tac-Toe is a paper-and-pencil game for two players, X and O, who take turns marking the spaces in a 3×3 grid.
+ * Player move is permanent and can't be moved again. If a position is taken you can not overwrite it.
+ * The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row is the winner.
+ * If no move is available, then it's a tie.
+ 
 <!-- ROADMAP -->
 ## Roadmap
 
@@ -92,8 +103,7 @@ Facundo Iglesias - [Github profile](https://github.com/Fig77)
 
 Stephen Gumba - [Github profile](https://github.com/bafiam)
 
-<br>
-Project Link: [Project repo](https://github.com/bafiam/tic_tac_toe)
+Project Link: - [Project repo](https://github.com/bafiam/tic_tac_toe)
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
@@ -103,3 +113,4 @@ Project Link: [Project repo](https://github.com/bafiam/tic_tac_toe)
 [issues-shield]: https://img.shields.io/badge/issues-0-%2300ff00
 [issues-url]: https://github.com/Fig77/Gradients-Project/issues
 [product-screenshot]: img/ss_3.png
+[numbers-grid]: img/number_grid.png

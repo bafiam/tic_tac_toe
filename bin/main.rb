@@ -23,7 +23,7 @@ loop do
     x, y = board.convert_input(move)
     unless logic.pos_empty(board.grid_key[y][x]) == -1
       board.modify_cell(x, y, players[turn].mark)
-      game_over = logic.check_win(x, y, players[turn].mark, board)
+      game_over = logic.game_end(x, y, players[turn].mark, board)
 
       break if game_over != 0
      

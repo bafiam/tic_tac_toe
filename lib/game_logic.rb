@@ -20,11 +20,11 @@ class Logic
 
   def row(x, t, board)
   	3.times { |k| return 0 if board.grid_key[x][k] != t } # row
-    0	
+    3	
   end
 
   def col(x, t, board)
-    3.times { |k| return 0 if board.grid_key[x][k] != t } # col
+    3.times { |k| return 0 if board.grid_key[k][x] != t } # col
     3
   end
 
@@ -55,8 +55,9 @@ class Logic
   end
 
   def game_end(x, y, t, board)
-    return true if row(x, y, t, board)
+    return true if check_win(x, y, t, board) ==3
     return 2 if @move_count == 9
+
     0
   end
 end

@@ -31,48 +31,44 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project 
-Ruby second collaborative project for Microverse that involves developing a [Tic-Tac-Toe](https://en.wikipedia.org/wiki/Tic-tac-toe) game. The game can be played on the console. The game mimics the object oriented (OOP) concepts in the ruby programming language.
+Ruby second collaborative project for Microverse that involves developing a [Tic-Tac-Toe](https://en.wikipedia.org/wiki/Tic-tac-toe) game. The game can be played on the console. The game mimics the object oriented (OOP) concepts in the ruby programming language. You can see the original specifications [here](https://www.theodinproject.com/courses/ruby-programming/lessons/oop).
 ### Objective
- 1. Getting familiar with OOP concepts, developing a small Tic-Tac-Toe game.
- 2. Getting a glimpse on how basic algorithm from Enumerables works.
+ The main goal is to put into practice the main concepts of Object Oriented Programming. Particularly, classes and access to their attributes.
 
- ### Prerequisites
+### Prerequisites
  The development environment uses `Ruby`, hence install ruby before proceeding.
- - Mac OS - `brew install ruby`
-  - linux - `sudo apt-get install ruby-full`
+  - Mac OS - `brew install ruby`
+  - Linux - `sudo apt-get install ruby-full`
   - windows - Download RubyInstaller [here](https://rubyinstaller.org/), run it, and you are done!
 
-
 ### Installation and set-up
-1. Clone the project- git clone <https://github.com/bafiam/tic_tac_toe.git>
-2. Cd tic_tac_toe
-3. To run `ruby bin/main.rb`
-
+1. You can download the zip project clicking [here](https://github.com/bafiam/tic_tac_toe/archive/develop.zip) or you can clone the project using the command - git clone <https://github.com/bafiam/tic_tac_toe.git> 
+2. If you are in windows, just navigate to the tic-tac-toe folder/bin and click on main to start the game. On Linux, navigate with console using [cd command](https://help.ubuntu.com/community/UsingTheTerminal) and then write `ruby bin/main.rb`
 
 ### Game Overview
-    
+  
   ![Project Screen Shot][product-screenshot]
   
 ### Built With
-This project was built using raw Ruby. 
+This project was built with: 
+* Ruby (No libraries)
+* Stickler
+* Rubocop
 
 <!-- USAGE EXAMPLES -->
 ## How to play
-<bold>How should this be manually tested?</bold>
-Clone the repo then navigate to the project directory, on the terminal type bin/main.rb
 ###### Tic-Tac-Toe instructions / How to play / Rules ######
 
  * Tic-Tac-Toe is a paper-and-pencil game for two players, X and O, who take turns marking the spaces in a 3×3 grid.
  * Player move is permanent and can't be moved again. If a position is taken you can not overwrite it.
  * The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row is the winner.
  * If no move is available, then it's a tie.
-
- * After choosing a name, Player 1 (X) will start.
-* Press 1 - 9 to place your move in the 3 x 3 grid that will show on screen.
-  * <br>![Numbered grid][numbers-grid]
-* After game ends, press y or n to continue or exit.
-* You can force a break in the loop by typing -5 as an input.
- 
+ * More details about Tic-Tac-Toe and its variables [here](https://en.wikipedia.org/wiki/Tic-tac-toe).
+ * Once this game starts, after choosing a name, Player 1 (X) will start.
+ * Press 1 - 9 to place your move in the 3 x 3 grid that will show on screen.
+    * <br>![Numbered grid][numbers-grid]
+ * After game ends, press y or n to continue or exit.
+ * You can force a break in the loop by typing -5 as an input.
 <!-- ROADMAP -->
 ## Roadmap
 

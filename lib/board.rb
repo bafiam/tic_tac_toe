@@ -21,3 +21,4 @@ class Game_board
     return mapping[moves]
   end
 end
+

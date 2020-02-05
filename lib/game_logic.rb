@@ -7,6 +7,7 @@ class Logic
 
 	def pos_empty(move)
 		return -1 unless move != "| O | " && move != "| X | "
+
 		0
 	end
 

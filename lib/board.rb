@@ -1,19 +1,9 @@
 class Game_board
   attr_accessor :grid_key
-  def initialize(move = {})
-    @grid_key = move.fetch(:grid_key, grid_default)
-  end
 
-  def grid_default
-    Array.new(3){Array.new(3){"|   | "}}
-  end
-
-  def get_cell(x, y)
-    @grid_key[y][x]
-  end
-
-  def modify_cell(x, y, value)
-    @grid_key[y][x] = value
+  def initialize
+     i = 0
+     @grid_key = {}.fetch(:grid_key, Array.new(3){Array.new(3){"| #{i += 1} | "}})
   end
 
   def convert_input(moves)
@@ -29,9 +19,5 @@ class Game_board
       "9" => [2,2]
     }
     return mapping[moves]
-  end
-
-  def display_grid
-    @grid_key.each {|rows| (rows.each { |x| print x }); puts "" }
   end
 end

@@ -3,6 +3,11 @@ require_relative '../lib/board.rb'
 require_relative '../lib/game_logic.rb'
 
 Players = Struct.new(:name, :mark)
+
+def display_grid(grid)
+   grid.each {|rows| (rows.each { |x| print x }); puts "" }
+end
+
 game_over = 0
 logic = Logic.new
 puts "Welcome to the tic tac toe game\nPlayer 1: provide your name"
@@ -17,11 +22,11 @@ if player2.length == 0
 end
 players = [Players.new(player1,"| X | "), Players.new(player2,"| O | ")]
 puts "Welcome, #{players[0].name} and #{players[1].name}\n"
-board = Game_board.new
+board = Game_board.new("|   | ")
 const, turn = 1, 0
 x, y = -1, -1
 loop do
-  board.display_grid
+  display_grid(board.grid_key)
   puts "\n#{players[turn].name}, Enter a number between 1 and 9 to make your move"
   move = gets.chomp
   break if move == "-5"
@@ -32,14 +37,14 @@ loop do
       game_over = logic.game_end(x, y, players[turn].mark, board)
 
       if game_over != 0
-        board.display_grid
+        display_grid(board.grid_key)
         game_over == 2 ? (puts "It's a TIE!") : (puts "\n#{players[turn].name} is the winner!")
         puts "Do you want to countinue playing....? Enter 'y' for YES or 'n' for NO"
         counti = gets.chomp
         if counti == 'n'
           break
         elsif counti == 'y'
-          board = Game_board.new
+          board = Game_board.new("|   | ")
           logic = Logic.new
         else
           puts "Wrong input, BYE!!!!!!!!!!!!"

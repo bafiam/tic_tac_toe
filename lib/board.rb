@@ -1,12 +1,8 @@
 class Game_board
   attr_accessor :grid_key
 
-  def initialize
-     @grid_key = {}.fetch(:grid_key, Array.new(3){Array.new(3){"|   | "}})
-  end
-
-  def self.grid_key(x,y)
-    @grid_key[y][x]
+  def initialize(s)
+     @grid_key = {}.fetch(:grid_key, Array.new(3){Array.new(3){s}})
   end
 
   def modify_cell(x, y, value)
@@ -26,9 +22,5 @@ class Game_board
       "9" => [2,2]
     }
     return mapping[moves]
-  end
-
-  def display_grid
-    @grid_key.each {|rows| (rows.each { |x| print x }); puts "" }
   end
 end

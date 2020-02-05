@@ -5,10 +5,6 @@ class Game_board
      @grid_key = {}.fetch(:grid_key, Array.new(3){Array.new(3){s}})
   end
 
-  def modify_cell(x, y, value)
-    @grid_key[y][x] = value
-  end
-
   def convert_input(moves)
     mapping = {
       "1" => [0,0],

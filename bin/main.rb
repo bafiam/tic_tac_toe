@@ -22,7 +22,7 @@ if player2.length == 0
 end
 players = [Players.new(player1,"| X | "), Players.new(player2,"| O | ")]
 puts "Welcome, #{players[0].name} and #{players[1].name}\n"
-board = Game_board.new("|   | ")
+board = Game_board.new
 const, turn = 1, 0
 x, y = -1, -1
 loop do
@@ -44,7 +44,7 @@ loop do
         if counti == 'n'
           break
         elsif counti == 'y'
-          board = Game_board.new("|   | ")
+          board = Game_board.new
           logic = Logic.new
         else
           puts "Wrong input, BYE!!!!!!!!!!!!"

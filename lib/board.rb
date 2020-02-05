@@ -1,8 +1,9 @@
 class Game_board
   attr_accessor :grid_key
 
-  def initialize(s)
-     @grid_key = {}.fetch(:grid_key, Array.new(3){Array.new(3){s}})
+  def initialize
+     i = 0
+     @grid_key = {}.fetch(:grid_key, Array.new(3){Array.new(3){"| #{i += 1} | "}})
   end
 
   def convert_input(moves)

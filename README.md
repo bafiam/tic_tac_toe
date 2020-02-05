@@ -24,6 +24,8 @@
 * [About the Project](#about-the-project)
   * [Built With](#built-with)
 * [How to play](#how-to-play)
+  * [Rules](#rules)
+  * [Instructions](#instructions)
 * [Roadmap](#roadmap)
 * [License](#license)
 * [Contact](#contact)
@@ -56,19 +58,24 @@ This project was built with:
 * Rubocop
 
 <!-- USAGE EXAMPLES -->
+
 ## How to play
-###### Tic-Tac-Toe instructions / How to play / Rules ######
+
+### Rules 
 
  * Tic-Tac-Toe is a paper-and-pencil game for two players, X and O, who take turns marking the spaces in a 3×3 grid.
  * Player move is permanent and can't be moved again. If a position is taken you can not overwrite it.
  * The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row is the winner.
  * If no move is available, then it's a tie.
- * More details about Tic-Tac-Toe and its variables [here](https://en.wikipedia.org/wiki/Tic-tac-toe).
- * Once this game starts, after choosing a name, Player 1 (X) will start.
+ * <strong>Full rules descriptions and details about Tic-Tac-Toe and its variables</strong> [here](https://en.wikipedia.org/wiki/Tic-tac-toe).
+
+### Instructions
+ * Once you start the game, players will choose a name. After that, Player 1 (X) will start.
  * Press 1 - 9 to place your move in the 3 x 3 grid that will show on screen.
     * <br>![Numbered grid][numbers-grid]
  * After game ends, press y or n to continue or exit.
- * You can force a break in the loop by typing -5 as an input.
+ * When another game starts, player who started second on previous round will start first.
+ * You can force a break in the game loop at anytime by typing -5 as an input.
 <!-- ROADMAP -->
 ## Roadmap
 

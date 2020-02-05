@@ -6,7 +6,9 @@ class Logic
 	end
 
 	def pos_empty(move)
-		return -1 unless move == "|   | "
+		return -1 unless (move != "| O | " && move != "| X | ")
+    @move_count += 1
+
 		0
 	end
 
@@ -14,7 +16,6 @@ class Logic
   	return -1 if input.length != 1
   	return -1 if !input.to_i.between?(1, 9)
 
-  	@move_count += 1
   	1
   end
 

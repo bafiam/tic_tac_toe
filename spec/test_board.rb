@@ -7,7 +7,13 @@ describe 'Test Game_board class' do
   let(:run) { Game_board.new }
   context 'on initialization' do
     it 'return a 3 by 3 array' do
-      expect(run.instance_variable_get(:@grid_key)).to eql [['| 1 | ', '| 2 | ', '| 3 | '], ['| 4 | ', '| 5 | ', '| 6 | '], ['| 7 | ', '| 8 | ', '| 9 | ']]
+      get_inst = run.instance_variable_get(:@grid_key)
+      expected = [
+        ['| 1 | ', '| 2 | ', '| 3 | '],
+        ['| 4 | ', '| 5 | ', '| 6 | '],
+        ['| 7 | ', '| 8 | ', '| 9 | ']
+      ]
+      expect(get_inst).to eql(expected)
     end
   end
   context '#convert_input' do

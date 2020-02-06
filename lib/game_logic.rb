@@ -42,12 +42,13 @@ class Logic
   end
 
   def check_win(x, y, t, board)
-    return 3 if row(y, t, board) == 3
-    return 3 if col(x, t, board) == 3 
-    return 3 if diag(t, board, x) == 3 && x == y
-    return anti_diag(t, board) if (x - y).abs == 2
+    res = 0
+      res += row(y, t, board)
+      res += col(x, t, board)
+      res += diag(t, board, x) == 3 && x == y
+      res += anti_diag(t, board) if (x - y).abs == 2
 
-    0
+    res == 0 ? 0 : 3
   end
 
   def game_end(x, y, t, board)

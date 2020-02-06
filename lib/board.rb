@@ -1,5 +1,6 @@
-`# frozen_string_literal: true`.
+# frozen_string_literal: true
 require_relative '../lib/game_logic.rb'
+
 class Game_board
   attr_accessor :grid_key
 

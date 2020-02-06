@@ -10,7 +10,7 @@ RSpec.describe Logic do
     context 'checks wins' do
       before do
         value = ['| X | ', '| X | ', '| X | ']
-        board.grid_key = [value,  value, value]
+        board.grid_key = [value, value, value]
       end
       it 'X wins diag' do
         expect(logic.anti_diag('| X | ', board)).to eq 3
@@ -30,9 +30,9 @@ RSpec.describe Logic do
     context 'checks loses' do
       before do
         value = ['| X | ', '| X | ', '| O | ']
-        board.grid_key = [value,  value, value]
+        board.grid_key = [value, value, value]
       end
-      3.times do |x| 
+      3.times do |x|
         it 'X does not win row' do
           expect(logic.row(x, '| X | ', board)).to eq 0
         end

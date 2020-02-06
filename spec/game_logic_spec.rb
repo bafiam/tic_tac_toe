@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+require 'rspec'
 require_relative '../lib/game_logic.rb'
 require_relative '../lib/board.rb'
 RSpec.describe Logic do
@@ -44,7 +45,7 @@ RSpec.describe Logic do
           expect(logic.manage_input((x + 1).to_s)).to eq 1
         end
         it 'input from -1 to -9 is incorrect' do
-          expect(logic.manage_input(((x + 1) * -1).to_s)).not_to eq -
+          expect(logic.manage_input(((x + 1) * -1).to_s)).not_to eq 1
         end
       end
       var = "1"

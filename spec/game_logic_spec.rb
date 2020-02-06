@@ -34,7 +34,6 @@ RSpec.describe Logic do
         it 'X does not win row' do
           expect(logic.row(x, '| X | ', board)).to eq 0
           expect(logic.col(x, '| X | ', board)).to eq 0
-
         end
         it 'O does not win rows' do
           expect(logic.row(x, '| O | ', board)).to eq 0
@@ -63,7 +62,7 @@ RSpec.describe Logic do
       expect(logic.anti_diag('| O | ', board)).to eq 0
       expect(logic.diag('| X | ', board, 0)).to eq 0
       expect(logic.anti_diag('| X | ', board)).to eq 0
-    end    
+    end
   end
   describe '#manage_input' do
     context 'checks if input is correct or incorrect' do

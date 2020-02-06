@@ -74,7 +74,7 @@ RSpec.describe Logic do
         expect(logic.pos_empty(move_3)).to eql 0
       end
       it 'return -1 when not empty' do
-        expect(logic.pos_empty(move_1)).to eql -1
+        expect(logic.pos_empty(move_1)).not_to eql 1
       end
     end
   end

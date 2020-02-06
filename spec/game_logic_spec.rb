@@ -6,6 +6,9 @@ RSpec.describe Logic do
   let(:logic) { Logic.new }
   let(:board) { Game_board.new }
   let(:value) { ['| X | ', '| X | ', '| O | '] }
+  let(:move_1) { '| X | ' }
+  let(:move_2) { '' }
+  let(:move_3) { 7 }
   describe '#check_win' do
     context 'checks wins' do
       before do
@@ -61,4 +64,27 @@ RSpec.describe Logic do
       end
     end
   end
+  describe '#pos_empty' do
+    context "given a move check if it has a 'x' or 'o' " do
+      before { board.grid_key[2][2] = '| X | ' }
+      it 'return 0 when empty' do
+        expect(logic.pos_empty(move_2)).to eql 0
+      end
+      it 'return 0 when empty' do
+        expect(logic.pos_empty(move_3)).to eql 0
+      end
+      it 'return -1 when not empty' do
+        expect(logic.pos_empty(move_1)).to eql -1
+      end
+    end
+  end
+
+  describe "#initialize" do
+    context "when initialized" do
+      it "returns a instant variable" do
+        expect(logic.instance_variable_get(:@move_count)).to eql 0
+        
+      end
+    end
+  end  
 end

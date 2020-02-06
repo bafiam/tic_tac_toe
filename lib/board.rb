@@ -1,5 +1,5 @@
+`# frozen_string_literal: true`.
 require_relative '../lib/game_logic.rb'
-
 class Game_board
   attr_accessor :grid_key
 
@@ -23,8 +23,3 @@ class Game_board
     return mapping[moves]
   end
 end
-
-# var1 = Logic.new
-# tes = Game_board.new
-# tes.grid_key = [["| X | ", "| X | ", "| X | "]]
-# puts var1.row(0, "| X | ", tes)

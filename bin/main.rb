@@ -1,4 +1,5 @@
 #!/usr/bin/ruby
+`# frozen_string_literal: true`.
 require_relative '../lib/board.rb'
 require_relative '../lib/game_logic.rb'
 

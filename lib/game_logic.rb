@@ -1,4 +1,4 @@
-
+`# frozen_string_literal: true`
 class Logic
 	def initialize
 		@move_count = 0
@@ -24,7 +24,6 @@ class Logic
   end
 
   def col(x, t, board)
-
     3.times { |k| return 0 if board.grid_key[k][x] != t } # col
     3
   end
@@ -45,12 +44,8 @@ class Logic
   def check_win(x, y, t, board)
     return 3 if row(y, t, board) == 3
     return 3 if col(x, t, board) == 3 
-    if x == y
-      return 3 if diag(t, board, x) == 3
-    end
-    if (x - y).abs == 2
-      return 3 if anti_diag(t, board) == 3
-    end
+    return 3 if diag(t, board, x) == 3  if x == y
+    return 3 if anti_diag(t, board) == 3 if (x - y).abs == 2
 
     0
   end
@@ -62,5 +57,3 @@ class Logic
     0
   end
 end
-
-

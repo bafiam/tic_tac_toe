@@ -1,4 +1,5 @@
-`# frozen_string_literal: true`
+# frozen_string_literal: true
+
 class Logic
 	def initialize
 		@move_count = 0
@@ -43,11 +44,10 @@ class Logic
 
   def check_win(x, y, t, board)
     res = 0
-      res += row(y, t, board)
-      res += col(x, t, board)
-      res += diag(t, board, x) == 3 && x == y
-      res += anti_diag(t, board) if (x - y).abs == 2
-
+    res += row(y, t, board)
+    res += col(x, t, board)
+    res += diag(t, board, x) == 3 && x == y
+    res += anti_diag(t, board) if (x - y).abs == 2
     res == 0 ? 0 : 3
   end
 

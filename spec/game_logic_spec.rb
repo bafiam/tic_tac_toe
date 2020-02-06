@@ -1,4 +1,4 @@
-`# frozen_string_literal: true`.
+# frozen_string_literal: true
 require_relative '../lib/game_logic.rb'
 require_relative '../lib/board.rb'
 RSpec.describe Logic do

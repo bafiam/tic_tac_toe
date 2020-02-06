@@ -40,19 +40,19 @@ RSpec.describe Logic do
   describe '#manage_input' do
     context 'checks if input is correct or incorrect' do
       9.times do |x|
-          it 'input from 1 - 9 is correct' do
-            expect(logic.manage_input((x + 1).to_s)).to eq 1
-          end
-          it 'input from -1 to -9 is incorrect' do
-            expect(logic.manage_input(((x + 1) * -1).to_s)).to eq -1
-          end
+        it 'input from 1 - 9 is correct' do
+          expect(logic.manage_input((x + 1).to_s)).to eq 1
+        end
+        it 'input from -1 to -9 is incorrect' do
+          expect(logic.manage_input(((x + 1) * -1).to_s)).not_to eq -
+        end
       end
       var = "1"
       4.times do |x|
         var += x.to_s
         it 'check if input greater than 1 is incorrect (from 2 - 6)' do
-            expect(logic.manage_input(var)).to eq -1
-         end
+          expect(logic.manage_input(var)).not_to eq 1
+        end
       end
     end
   end

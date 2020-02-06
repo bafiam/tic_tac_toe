@@ -61,4 +61,3 @@ loop do
     puts "Number must be between 1 and 9 "
   end
 end
-

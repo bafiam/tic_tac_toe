@@ -1,4 +1,4 @@
-require_relative '../lib/board.rb'
+# frozen_string_literal: true
 
 class Logic
 	def initialize
@@ -30,7 +30,7 @@ class Logic
   end
 
   def diag(t, board, x)
-      3.times { |k| return 0 if board.grid_key[k][k] != t}
+    3.times { |k| return 0 if board.grid_key[k][k] != t }
      if x == 1
       3.times { |k| return 0 if board.grid_key[k][2 - k] != t} # row
      end
@@ -48,9 +48,7 @@ class Logic
     if x == y
       return 3 if diag(t, board, x) == 3
     end
-    if (x - y).abs == 2
-      return 3 if anti_diag(t, board) == 3
-    end
+    anti_diag(t, board) if x == 3
 
     0
   end

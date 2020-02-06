@@ -7,40 +7,63 @@ RSpec.describe Logic do
   let(:board) { Game_board.new }
   let(:value) { ['| X | ', '| X | ', '| O | '] }
   describe '#check_win' do
-    context 'checks wins' do
+    context 'checks wins rows and cols' do
       before do
         value = ['| X | ', '| X | ', '| X | ']
         board.grid_key = [value, value, value]
       end
-      it 'X wins diag' do
-        expect(logic.anti_diag('| X | ', board)).to eq 3
-      end
       3.times do |x|
-        it 'X winsm rows and cols' do
+        it 'X wins rows and cols' do
           expect(logic.row(x, '| X | ', board)).to eq 3
           expect(logic.col(x, '| X | ', board)).to eq 3
         end
-        it 'O win' do
+        it 'O wins rows and cols' do
           value = ['| O | ', '| O | ', '| O | ']
           board.grid_key = [value, value, value]
           expect(logic.row(x, '| O | ', board)).to eq 3
+          expect(logic.col(x, '| O | ', board)).to eq 3
         end
       end
     end
-    context 'checks loses' do
+    context 'checks loses rows and cols' do
       before do
         value = ['| X | ', '| X | ', '| O | ']
-        board.grid_key = [value, value, value]
+        board.grid_key = [value, value, ['| O | ', '| O | ', '| X | ']]
       end
       3.times do |x|
         it 'X does not win row' do
           expect(logic.row(x, '| X | ', board)).to eq 0
+          expect(logic.col(x, '| X | ', board)).to eq 0
+
         end
         it 'O does not win rows' do
           expect(logic.row(x, '| O | ', board)).to eq 0
+          expect(logic.col(x, '| O | ', board)).to eq 0
         end
       end
     end
+  end
+  context 'checks wins diag and anti_diag' do
+    it 'X wins diag' do
+      value = ['| X | ', '| X | ', '| X | ']
+      board.grid_key = [value, value, value]
+      expect(logic.diag('| X | ', board, 0)).to eq 3
+      expect(logic.anti_diag('| X | ', board)).to eq 3
+    end
+    it 'O wins diag' do
+      value = ['| O | ', '| O | ', '| O | ']
+      board.grid_key = [value, value, value]
+      expect(logic.diag('| O | ', board, 0)).to eq 3
+      expect(logic.anti_diag('| O | ', board)).to eq 3
+    end
+    it 'O and X loses diag' do
+      value = ['| X | ', '| O | ', '| X | ']
+      board.grid_key = [value, value, value]
+      expect(logic.diag('| O | ', board, 0)).to eq 0
+      expect(logic.anti_diag('| O | ', board)).to eq 0
+      expect(logic.diag('| X | ', board, 0)).to eq 0
+      expect(logic.anti_diag('| X | ', board)).to eq 0
+    end    
   end
   describe '#manage_input' do
     context 'checks if input is correct or incorrect' do

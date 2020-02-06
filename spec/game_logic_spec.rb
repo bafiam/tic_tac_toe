@@ -79,12 +79,11 @@ RSpec.describe Logic do
     end
   end
 
-  describe "#initialize" do
-    context "when initialized" do
-      it "returns a instant variable" do
+  describe '#initialize' do
+    context 'when initialized' do
+      it 'returns a instant variable' do
         expect(logic.instance_variable_get(:@move_count)).to eql 0
-        
       end
     end
-  end  
+  end
 end

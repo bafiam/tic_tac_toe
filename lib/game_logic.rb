@@ -1,4 +1,3 @@
-require_relative '../lib/board.rb'
 
 class Logic
 	def initialize
@@ -25,6 +24,7 @@ class Logic
   end
 
   def col(x, t, board)
+
     3.times { |k| return 0 if board.grid_key[k][x] != t } # col
     3
   end
@@ -62,3 +62,5 @@ class Logic
     0
   end
 end
+
+

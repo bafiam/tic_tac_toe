@@ -44,8 +44,8 @@ class Logic
   def check_win(x, y, t, board)
     return 3 if row(y, t, board) == 3
     return 3 if col(x, t, board) == 3 
-    return 3 if diag(t, board, x) == 3  if x == y
-    return 3 if anti_diag(t, board) == 3 if (x - y).abs == 2
+    return 3 if diag(t, board, x) == 3 && x == y
+    return anti_diag(t, board) if (x - y).abs == 2
 
     0
   end

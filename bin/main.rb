@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 #!/usr/bin/ruby
 require_relative '../lib/board.rb'
 require_relative '../lib/game_logic.rb'
@@ -61,4 +62,3 @@ loop do
     puts "Number must be between 1 and 9 "
   end
 end
-
